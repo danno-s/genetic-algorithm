@@ -1,7 +1,6 @@
 import random
 
 class Population():
-
     def __init__(self, number_of_individuals, individual_generator, fitness, filter_func):
         '''Crea una nueba población con el número de individuos dados, generados 
         por la función individual_generator.
@@ -24,7 +23,7 @@ class Population():
         self.fitness = fitness
         self.individual_fitness = {}
 
-        self.filter_population = filter_func
+        Population.filter_population = filter_func
 
     def compute_fitness(self):
         '''Calcula el fitness para todos los miembros de la población
