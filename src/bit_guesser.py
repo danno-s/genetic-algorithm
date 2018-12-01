@@ -1,5 +1,6 @@
 import random
 from bit_individual import BitIndividual
+from filtering import probabilistic_filter
 from population import Population
 
 if __name__ == "__main__":
@@ -20,16 +21,10 @@ if __name__ == "__main__":
                 fitness += 1
         return fitness
 
-    def filter_population(self):
-        to_remove = []
-        for individual, fitness in self.individual_fitness.items():
-            if random.random() > fitness / n_bits:
-                to_remove.append(individual)
-        for individual in to_remove:
-            self.individual_fitness.pop(individual)
+    population = Population(100, individual_generator, fitness, probabilistic_filter([0, n_bits]))
 
-    population = Population(100, individual_generator, fitness, filter_population)
-
+    generations = 1
+    max_fitness = []
     solution = None
 
     while True:
@@ -38,11 +33,23 @@ if __name__ == "__main__":
         # Conseguimos el elemento de mejor fitness
         sorted_individuals = sorted(population.individual_fitness.items(), key=lambda kv: kv[1])
 
-        if sorted_individuals[-1] == n_bits:
+        # Si el fitness es el número de bits de la frase
+        if sorted_individuals[-1][1] == n_bits:
+            # La solución es el par asociado a ese fitness
             solution = sorted_individuals[-1][0]
+
+
+        print("\033[KBest individual fitness: {}".format(sorted_individuals[-1][1]), end="\r")
+        max_fitness.append(sorted_individuals[-1][1])
+
+        if solution:
             break
 
+        generations += 1
         population.filter_population()
         population.reproduce()
 
-    print("Bits encontrados: {}".format(solution.bits))
+
+    print("\033[KSolución encontrada en {} generaci{}.".format(generations, "ón" if generations == 1 else "ones"))
+    print("Fitness máxima de cada generación: " + " ".join("\n\tGen " + str(i + 1) + ": " +  str(max_fitness[i]) for i in range(generations)))
+    print("Respuesta encontrada: {}".format(solution.bits))

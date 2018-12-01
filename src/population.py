@@ -34,6 +34,9 @@ class Population():
     def reproduce(self):
         '''Rellena la población hasta n, reproduciendo individuos al azar.
         '''
-        while len(self.individuals) < self.n:
+        new_children = []
+        while len(self.individuals) + len(new_children) < self.n:
             parentA, parentB = random.choices(self.individuals, k = 2)
-            self.individuals.append(parentA.reproduce(parentB))
+            new_children.append(parentA.reproduce(parentB))
+
+        self.individuals.extend(new_children)
