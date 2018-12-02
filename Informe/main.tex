@@ -86,13 +86,13 @@
 % CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
 \input{lib/pageconf}
 
-% TABLA DE CONTENIDOS - ÍNDICE
-\input{lib/index} % Índice, se puede borrar
-
 % CONFIGURACIONES FINALES
 \input{lib/finalconf}
 
 % ======================= INICIO DEL DOCUMENTO =======================
+
+\section*{Código Fuente}
+  Todo el código fuente de este algoritmo se encuentra en \href{https://github.com/danno-s/genetic-algorithm}{este repositorio}.
 
 \section*{Problema}
   El problema elegido para aplicar el algoritmo genético fue el de N-Queens, donde se pide encontrar una configuración de $N$ reinas en un tablero de $N\cross N$ casillas, donde no haya ninguna reina atacando a otra, según las reglas del ajedrez. Cada individuo del modelo creado representa a una posible solución del problema, donde el individuo mantiene las $N$ posiciones distintas donde irían las reinas. Como funcioń de fitness se elegió una bastante intuitiva, que cuenta el número de ataques posibles entre las reinas y lo retorna negado. Esta función puede tener valores entre $-(N^2 - N)$ y $0$, donde un individuo con fitness 0 representa una solución correcta al problema.

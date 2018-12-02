@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1543766824 "/home/danno-s/Documents/Primavera-2018/Redes-Neuronales/genetic-algorithm/Informe/main.tex" "main.pdf" "main" 1543766827
+["pdflatex"] 1543766969 "/home/danno-s/Documents/Primavera-2018/Redes-Neuronales/genetic-algorithm/Informe/main.tex" "main.pdf" "main" 1543766973
   "/etc/texmf/web2c/texmf.cnf" 1527731689 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/danno-s/Documents/Primavera-2018/Redes-Neuronales/genetic-algorithm/Informe/main.tex" 1543766824 12613 9b3ab023a92cead15e45c7783dab0884 ""
+  "/home/danno-s/Documents/Primavera-2018/Redes-Neuronales/genetic-algorithm/Informe/main.tex" 1543766969 12692 30859f98693991c44d2b5901e9b45234 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1480098696 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1480098696 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -265,18 +265,15 @@
   "lib/function/image.tex" 1543690131 14227 861be055da649d2bfa1c44b574561b75 ""
   "lib/function/title.tex" 1543690131 3786 8997b12a334d7bfa5b77bf3303894404 ""
   "lib/imports.tex" 1543690131 4931 c650b99287904dfb7321c38f17069fe1 ""
-  "lib/index.tex" 1543690131 2211 6ca6c88645432383aa3ea06060384b88 ""
   "lib/initconf.tex" 1543690131 11301 57fc3e8a1a69c292ed9dd4cae621e015 ""
   "lib/pageconf.tex" 1543690131 4889 bfc8ecaf7086f722923c4af4a55930ff ""
   "lib/portrait.tex" 1543690131 16622 887ea84b3546a96eafeac74267309a83 ""
   "lib/styles.tex" 1543690131 4517 f5fb946d44a80d44be6d519a867af49a ""
-  "main.aux" 1543766827 1950 c43617266335afbf5fc3fab46fc0ba3c ""
-  "main.lof" 1543766827 903 23abf05f997a26915747f85645b03a1f ""
-  "main.tex" 1543766824 12613 9b3ab023a92cead15e45c7783dab0884 ""
-  "main.toc" 1543766827 23 39d772808ad4a7ebd21da0b3c9cd2947 ""
+  "main.aux" 1543766972 1950 c43617266335afbf5fc3fab46fc0ba3c ""
+  "main.tex" 1543766969 12692 30859f98693991c44d2b5901e9b45234 ""
   (generated)
   "main.lof"
   "main.pdf"
   "main.toc"
-  "main.log"
   "main.aux"
+  "main.log"
