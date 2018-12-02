@@ -1,17 +1,21 @@
 from random import random, choice
 
-def probabilistic_filter(range):
+def probabilistic_filter(range, base):
     '''Retorna una nueva funcion de filtro de población, donde un elemento de fitness f
-    tiene f - range[0] / range[1] - range[0] probabilidad de no ser eliminado.
+    tiene max(f - range[0] / range[1] - range[0], base) probabilidad de no ser eliminado.
     ----------
     Parametros:
         range: array-like de 2 elementos, donde range[0] < range[1]
 
     '''
+    def p(fitness):
+        return max((fitness - range[0]) / (range[1] - range[0]), base)
+
     def filter_population(self):
         to_remove = []
+
         for individual, fitness in self.individual_fitness.items():
-            if random() > fitness:
+            if random() > p(fitness):
                 to_remove.append(individual)
         for individual in to_remove:
             self.individuals.remove(individual)

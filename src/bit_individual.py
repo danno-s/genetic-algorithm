@@ -1,6 +1,6 @@
 import random
 
-mutation_rate = 0.05
+MUTATION_RATE = 0.05
 
 class BitIndividual:
     def __init__(self, n_bits):
@@ -23,7 +23,7 @@ class BitIndividual:
         mutated_bits = ""
 
         for i in range(self.n_bits):
-            if random.random() < mutation_rate:
+            if random.random() < MUTATION_RATE:
                 mutated_bits += "0" if child.bits[i] == "1" else "1"
             else:
                 mutated_bits += child.bits[i]

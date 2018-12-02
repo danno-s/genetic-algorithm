@@ -16,9 +16,10 @@ class Population():
                 función que filtra la población de esta instancia
         '''
         self.n = number_of_individuals
+        self.generator = individual_generator
         self.individuals = []
-        for _ in range(number_of_individuals):
-            self.individuals.append(individual_generator())
+        for _ in range(self.n):
+            self.individuals.append(self.generator())
 
         self.fitness = fitness
         self.individual_fitness = {}
@@ -33,10 +34,16 @@ class Population():
 
     def reproduce(self):
         '''Rellena la población hasta n, reproduciendo individuos al azar.
+        Si se eliminaron todos los individuos de la población, genera una nueva.
         '''
-        new_children = []
-        while len(self.individuals) + len(new_children) < self.n:
-            parentA, parentB = random.choices(self.individuals, k = 2)
-            new_children.append(parentA.reproduce(parentB))
+        if len(self.individuals) == 0:
+            for _ in range(self.n):
+                self.individuals.append(self.generator())
+        else:
+            new_children = []
 
-        self.individuals.extend(new_children)
+            while len(self.individuals) + len(new_children) < self.n:
+                parentA, parentB = random.choices(self.individuals, k = 2)
+                new_children.append(parentA.reproduce(parentB))
+
+            self.individuals.extend(new_children)

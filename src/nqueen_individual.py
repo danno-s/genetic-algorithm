@@ -1,6 +1,6 @@
 from random import randint, random
 
-mutation_rate = 0.2
+MUTATION_RATE = 0.2
 
 '''Clase que representa una solución al problema de N reinas en un tablero de NxN.
 La solución se representa simplemente con las posiciones de las N reinas.
@@ -37,7 +37,7 @@ class NQueenIndividual:
 
         for i in range(self.n):
             # Si se muta, poner una reina completamente nueva
-            if random() < mutation_rate:
+            if random() < MUTATION_RATE:
                 while True:
                     new_queen = [randint(0, self.n - 1), randint(0, self.n - 1)]
                     if new_queen not in child.queens:
